@@ -1,3 +1,5 @@
+Development based on<a href="https://laracasts.com/series/laravel-8-from-scratch"> tutorial</a> by Jeffrey Way,
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
