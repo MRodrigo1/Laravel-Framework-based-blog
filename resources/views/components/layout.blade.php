@@ -21,7 +21,6 @@
                     <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
                 </a>
             </div>
-
             <div class="mt-8 md:mt-0 flex items-center">
                 @guest
                     <a href="/register" class="text-xs font-bold uppercase">Register</a>
@@ -50,17 +49,22 @@
                 </a>
             </div>
         </nav>
-
+        <div class="mt-10 text-center">
+            <a href="#todolist" class="p-10 text-center text-blue-500 border border-blue-500 uppercase rounded-full font-semibold py-3 hover:text-white hover:bg-blue-500">
+                My ToDo List
+            </a>
+        </div>
+       
         {{ $slot }}
 
-        <footer id="newsletter" class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
+        <footer class="flex bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
+            <div style="width:50%" id="newsletter">
             <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
             <p class="text-sm mt-3">Promise to keep the inbox clean. No bugs.</p>
 
             <div class="mt-10">
                 <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
-
                     <form method="POST" action="/newsletter" class="lg:flex text-sm">
                         @csrf
                         <div class="lg:py-3 lg:px-5 flex items-center">
@@ -79,15 +83,24 @@
                             </div>
                         </div>
                         <button type="submit"
-                                class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8"
-                        >
+                                class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">
                             Subscribe
                         </button>
                     </form>
                 </div>
             </div>
+            </div>
+            <div style="width: 50%" id="todolist">
+            <img src="/images/list.png" alt="" class="mx-auto"  style="width: 115px;">
+            <h5 class="text-3xl">Check your To-Do List</h5>
+            <p class="text-sm mt-3">Have you forgotten something? Check!</p>
+            <div class="mt-8">
+            <a href="/ToDoList" class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">
+                Check Now!
+            </a>
+            </div>
+        </div>
         </footer>
     </section>
-
     <x-flash/>
 </body>

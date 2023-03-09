@@ -25,7 +25,10 @@ class DatabaseSeeder extends Seeder
 
             //Especificar um especifico nome de utilizador
             $user = User::factory()->create([
-               'name' => 'John Doe'
+               'name' => 'MRodrigo',
+               'email' => 'Rodrigo@gmail.com',
+               'password' => 'password',
+               'username' => 'MRodrigo',
             ]);
             //dar override do user se quisermos especificar
             Post::factory(5)->create([

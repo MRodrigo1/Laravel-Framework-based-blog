@@ -6,6 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\ToDoListController;
 use Illuminate\Support\Facades\Route;
 
 use App\Models\Post;
@@ -53,7 +54,6 @@ Route::post('newsletter' , NewsletterController::class);
 // Route::patch('admin/posts/{post}',[AdminPostController::class,'update'])->middleware('admin');
 // Route::delete('admin/posts/{post}',[AdminPostController::class,'destroy'])->middleware('admin');
 
-
 //Group
 Route::middleware('can:admin')->group(function(){
     //Includes all, generates paths auto
@@ -64,8 +64,9 @@ Route::middleware('can:admin')->group(function(){
     Route::get('admin/posts/edit/{post}',[AdminPostController::class,'edit']);
     Route::patch('admin/posts/{post}',[AdminPostController::class,'update']);
     Route::delete('admin/posts/{post}',[AdminPostController::class,'destroy']);
-
 });
+
+Route::get('toDoList', [ToDoListController::class,'show'])->middleware('auth');
 // Route::get('categories/{category:slug}', function (Category $category) {
 //         return view('posts', [
 //                 'posts' => $category->posts,

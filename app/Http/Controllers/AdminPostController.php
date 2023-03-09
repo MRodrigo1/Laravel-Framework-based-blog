@@ -34,7 +34,7 @@ class AdminPostController extends Controller
         
         Post::create($attributes);
 
-        return redirect('/');
+        return redirect('/')->with('success','Post Created!');
     }
 
     public function edit(Post $post) {
